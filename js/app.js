@@ -11,10 +11,14 @@ let nombreCompleto = prompt(
 let productoA = 0;
 let productoB = 0;
 let productoC = 0;
+let productoD = 0;
+let productoE = 0;
 
 const PRECIOA = 150; // Precio fijo productoA = Yerba
 const PRECIOB = 240; // Precio fijo productoB = Mate
 const PRECIOC = 560; // Precio fijo productoC = Bombilla
+const PRECIOD = 560; // Precio fijo productoD = Cuchillo
+const PRECIOE = 560; // Precio fijo productoE = Termo
 
 let costoA;
 let costoB;
@@ -54,8 +58,11 @@ cantidadDeItems(); // Llamada a la función.
 // Se determina si el usuario obtiene un descuento del 20% por comprar al menos un item de cada producto.
 if (costoA > 0 && costoB > 0 && costoC > 0) {
   alert("¡Obtiene un descuento del 20%! 🎉");
-  alert("Proceda al pago 💵");
-  alert("El importe total a abonar es de: " + "$ " + 0.8 * precioTotal);
+  alert(
+    "Proceda al pago 💵: El importe total a abonar es de: " +
+      "$ " +
+      0.8 * precioTotal
+  );
   descuento = 0.8; // Obtiene un descuento del 20%
   carritoLleno = true;
 } else {
@@ -76,14 +83,20 @@ if (tieneDescuento === true) {
     alert("Favor ingrese números mayores a 0");
     cantidadDeItems();
   }
-  alert("Proceda al pago con descuento 😎");
-  alert("El importe total a abonar es de: " + "$" + 0.8 * precioTotal);
+  alert(
+    "Proceda al pago con descuento 😎: El importe total a abonar es de: " +
+      "$" +
+      0.8 * precioTotal
+  );
   descuento = 0.8; // Obtiene un descuento del 20%
   carritoLleno = true; // Por el momento sin uso.
 } else if (tieneDescuento === false) {
   // El usuario no desea acceder al descuento y procede al pago final sin descuento.
-  alert("Proceda al pago sin descuento ☹");
-  alert("El importe total a abonar es de: " + "$" + precioTotal);
+  alert(
+    "Proceda al pago sin descuento ☹: El importe total a abonar es de: " +
+      "$" +
+      precioTotal
+  );
   carritoLleno = false; // Por el momento sin uso.
   descuento = 1; // No obtiene descuento.
 }
