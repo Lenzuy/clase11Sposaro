@@ -22,7 +22,7 @@ productos.push(new Producto("3", "bombilla", PRECIOC, stockC));
 productos.push(new Producto("4", "cuchillo", PRECIOD, stockD));
 productos.push(new Producto("5", "termo", PRECIOE, stockE));
 
-// El programa le permitirá al usuario buscar por productos.
+// El Usuario puede elegir ver la lista de productos en la Consola.
 let listado = confirm("¿Desea conocer el listado de productos?");
 
 if (listado === true) {
