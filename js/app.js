@@ -9,16 +9,19 @@ let nombreCompleto = prompt(
 );
 
 let productoA = 0;
+let tipoProductoA = "";
 let productoB = 0;
 let productoC = 0;
 let productoD = 0;
 let productoE = 0;
 
-const PRECIOA = 150; // Precio fijo productoA = Yerba
-const PRECIOB = 240; // Precio fijo productoB = Mate
-const PRECIOC = 560; // Precio fijo productoC = Bombilla
-const PRECIOD = 560; // Precio fijo productoD = Cuchillo
-const PRECIOE = 560; // Precio fijo productoE = Termo
+let PRECIOAa = 150; // Precio fijo productoAa = Yerba Con Palos
+let PRECIOAb = 180; // Precio fijo productoAb = Yerba Sin Palos
+let PRECIOA = 0; // Variable que toma el valor de PRECIOAa o PRECIOAb, según escoja que yerba escoja el Usuario.
+const PRECIOB = 240; // Precio fijo productoB = Mate Calabaza
+const PRECIOC = 560; // Precio fijo productoC = Bombilla de Plata
+const PRECIOD = 4560; // Precio fijo productoD = Cuchillo Acero Damasco
+const PRECIOE = 3000; // Precio fijo productoE = Termo Stanley Verde
 
 let costoA;
 let costoB;
@@ -29,10 +32,32 @@ let tieneDescuento;
 let carritoLleno; // Por el momento sin uso.
 let descuento;
 
+function tipoDeYerba() {
+  tipoProductoA = prompt(
+    "¿Que tipo de Yerba desea? A (" +
+      PRECIOAa +
+      " $/kg); B (" +
+      PRECIOAb +
+      " $/kg);- Inserte la letra asignada a su preferencia: "
+  ).toLocaleLowerCase();
+  switch (tipoProductoA) {
+    case "a":
+      PRECIOA = PRECIOAa;
+      break;
+    case "b":
+      PRECIOA = PRECIOAb;
+      break;
+    default:
+      alert("Favor ingrese una opción válida");
+      tipoDeYerba();
+      break;
+  }
+}
+
 // Función que determina la cantidad de productos que comprará el usuario.
 function cantidadDeItems() {
   productoA = parseInt(
-    prompt("Yerba (" + PRECIOA + " $/kg) - Seleccione la cantidad: ")
+    prompt("Yerba (" + PRECIOA + " $/u) - Seleccione la cantidad: ")
   );
   productoB = parseInt(
     prompt("Mate (" + PRECIOB + " $/u) - Seleccione la cantidad: ")
@@ -53,7 +78,11 @@ function cantidadDeItems() {
   }
 }
 
-cantidadDeItems(); // Llamada a la función.
+//debugger;
+
+// Llamada a las funciones.
+tipoDeYerba();
+cantidadDeItems();
 
 // Se determina si el usuario obtiene un descuento del 20% por comprar al menos un item de cada producto.
 if (costoA > 0 && costoB > 0 && costoC > 0) {
@@ -112,4 +141,4 @@ console.log(productoC + " Bombilla (Unid.): " + costoC);
 console.log("Subtotal: $ " + precioTotal);
 console.log("Descuento del " + Math.ceil((1 - descuento) * 100) + " %");
 console.log("Total: $ " + precioTotal * descuento);
-console.log("¡Muchas Gracias por su compra " + nombreCompleto + "!");
+console.log("¡Muchas Gracias por su compra " + nombreCompleto + "!"); // En este console.log devuelvo el nombre ingresado por el usuario.
