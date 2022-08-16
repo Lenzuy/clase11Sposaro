@@ -1,5 +1,3 @@
-carrito = [];
-
 // Buscar productos en el Array 'productos', definido en el archivo array.js
 
 function buscarProducto() {

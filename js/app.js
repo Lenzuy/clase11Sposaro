@@ -29,7 +29,7 @@ let costoC;
 let precioTotal;
 
 let tieneDescuento;
-let carritoLleno; // Por el momento sin uso.
+let carritoLleno;
 let descuento;
 
 function tipoDeYerba() {
@@ -118,7 +118,7 @@ if (tieneDescuento === true) {
       0.8 * precioTotal
   );
   descuento = 0.8; // Obtiene un descuento del 20%
-  carritoLleno = true; // Por el momento sin uso.
+  carritoLleno = true;
 } else if (tieneDescuento === false) {
   // El usuario no desea acceder al descuento y procede al pago final sin descuento.
   alert(
@@ -126,11 +126,11 @@ if (tieneDescuento === true) {
       "$" +
       precioTotal
   );
-  carritoLleno = false; // Por el momento sin uso.
+  carritoLleno = false;
   descuento = 1; // No obtiene descuento.
 }
 
-let itemsEnCarrito = productoA + productoB + productoC; //Por el momento sin uso.
+let itemsEnCarrito = productoA + productoB + productoC;
 
 // Resumen de Compra en la Consola:
 console.log("Resumen de Compra 🧉: ");
