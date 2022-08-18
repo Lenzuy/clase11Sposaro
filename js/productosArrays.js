@@ -1,10 +1,9 @@
 // Buscar productos en el Array 'productos', definido en el archivo array.js
 
 function buscarProducto() {
-  //debugger;
-  let productoBuscado = prompt(
-    "Ingrese que producto desea buscar: "
-  ).toLowerCase();
+  let productoBuscado = document
+    .getElementById("inputBuscador")
+    .value.toLowerCase();
   const resultado = productos.find(
     (productos) =>
       productos.producto === productoBuscado ||
@@ -18,10 +17,6 @@ function buscarProducto() {
         "'" +
         " no se encuentra en el listado"
     );
-    let buscarDeNuevo = confirm("Desea buscar otro producto");
-    if (buscarDeNuevo === true) {
-      buscarProducto();
-    }
   } else {
     console.log(resultado);
   }
@@ -29,9 +24,7 @@ function buscarProducto() {
 
 // Filtrar productos en el Array 'productos' según lo ingresado en el prompt.
 function filtrarProductos() {
-  let filtro = prompt(
-    "Ingrese como desea filtrar los productos: "
-  ).toLocaleLowerCase();
+  let filtro = document.getElementById("inputBuscador").value.toLowerCase();
   const resultado = productos.filter((productos) =>
     productos.producto.includes(filtro)
   );
@@ -43,10 +36,6 @@ function filtrarProductos() {
     );
     filtrarProductos();
   } else {
-    console.log("Listado según su filtro", "'", filtro, "'");
     console.table(resultado);
   }
 }
-
-buscarProducto();
-filtrarProductos();

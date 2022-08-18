@@ -1,0 +1,10 @@
+#contenedorProductos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-img-top {
+  width: 286px;
+  height: 174.4px;
+}
