@@ -12,7 +12,7 @@ class Producto {
 }
 
 // ! El carrito mostrado en la navbar; obtiene la información almacenada en el localStorage.
-
+// ! Utilizo un Operador OR para que me muestre O lo que hay en el localStorage o sino un array vacío.
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 // !Se crea el Objeto con todos los productos.
@@ -110,6 +110,7 @@ let containerProd = document.getElementById("contenedorProductos");
 const containerCarrito = document.querySelector("#carrito");
 
 // ! Creación de las tarjetas de los productos.
+// ! Utilizo un Operador Ternario en la línea 130: ${buscar.item === undefined ? 0 : buscar.item}
 let crearCards = () => {
   return (containerProd.innerHTML = productos
     .map((x) => {
@@ -126,7 +127,7 @@ let crearCards = () => {
         <div class="buttons">
           <i onclick="disminuir(${id})" class="bi bi-dash-lg"></i>
           <div id=${id} class="cantidad">
-          ${buscar.item === undefined ? 0 : buscar.item}
+          ${buscar.item === undefined ? 0 : buscar.item} 
           </div>
           <i onclick="aumentar(${id})" class="bi bi-plus-lg"></i>
         </div>
