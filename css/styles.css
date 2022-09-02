@@ -11,6 +11,10 @@
 }
 
 /**
+* ! Estilos del Footer
+**/
+
+/**
 * ! Estilos del contenedor de Productos
 **/
 
@@ -24,6 +28,8 @@
   flex-wrap: wrap;
   gap: 20px;
   margin: 20px;
+  border-top: 1px solid black;
+  padding: 10px;
 }
 
 .card-price {
@@ -100,3 +106,34 @@
 #tituloCarrito {
   text-align: center;
 }
+
+/**
+* ! Mostrar u ocultar las Cards de Productos según filtro del Usuario.
+* ? Esta funcionalidad aún no está disponible, sino que quedará para la parte final del Proyecto
+**/
+
+/* #product-id-yerbaId1 {
+  display: block;
+}
+#product-id-yerbaId2 {
+  display: none;
+}
+#product-id-mateId {
+  display: none;
+}
+#product-id-bombillaId {
+  display: none;
+}
+#product-id-yerberaId {
+  display: block;
+}
+#product-id-cuchilloId {
+  display: none;
+}
+#product-id-termoId {
+  display: none;
+}
+#product-id-materaId {
+  display: none;
+}
+ */

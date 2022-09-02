@@ -52,7 +52,7 @@ productos.push(
 );
 productos.push(
   new Producto(
-    "BombillaId",
+    "bombillaId",
     "bombilla",
     "Bombilla",
     1560,
@@ -85,7 +85,7 @@ productos.push(
 );
 productos.push(
   new Producto(
-    "IdYerbera",
+    "yerberaId",
     "yerbera",
     "Yerbera",
     250,
