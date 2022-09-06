@@ -106,19 +106,26 @@ productos.push(
   )
 );
 
-let containerProd = document.getElementById("contenedorProductos");
+// let containerProd = document.getElementById("contenedorProductos");
 const containerCarrito = document.querySelector("#carrito");
 
-// ! Creación de las tarjetas de los productos.
-// ! Utilizo un Operador Ternario en la línea 130: ${buscar.item === undefined ? 0 : buscar.item}
-let crearCards = () => {
-  return (containerProd.innerHTML = productos
-    .map((x) => {
-      let { id, producto, nombre, precio, stock, descripcion, imagen } = x;
-      let buscar = basket.find((x) => x.id === id) || [];
-      return `
-  <div class="card" id=product-id-${id} style="width: 18rem;">
-    <img src="${imagen}" class="card-img-top" alt="${descripcion}">
+// ! Se crean las Cartas de Productos con Fetch
+
+const seccion = document.getElementById("contenedorProductos");
+const URL = "js/productos.json";
+let tarjetasProds = [];
+
+const peticionFetch = async () => {
+  const response = await fetch(URL);
+  const data = await response.json();
+  return data;
+};
+
+const crearCards = (content) => {
+  const { id, producto, nombre, precio, stock, descripcion, imagen } = content;
+  let buscar = basket.find((content) => content.id === id) || [];
+  return `<div class="card" id=product-id-${id} style="width: 18rem;">
+    <img src="${imagen}" class="card-img-top" id=img-${id} alt="${descripcion}">
     <div class="card-body">
       <h5 class="card-title">${nombre}</h5>
       <p class="card-text">${descripcion}</p>
@@ -133,13 +140,35 @@ let crearCards = () => {
         </div>
       </div>
     </div>
-  </div>
-    `;
-    })
-    .join(""));
+  </div>`;
 };
 
-crearCards();
+const retornoCardError = () => {
+  return `<div class="error-contenido">
+              <div class="emoji">🛠</div>
+              <p>Parece que hubo un error :/</p>
+              <p>Estamos trabajando para resolver el problema...</p>
+          </div>`;
+};
+
+let contenidoHTML = "";
+
+const cargarContenido = async () => {
+  await fetch("js/productos.json")
+    .then((response) => response.json())
+    .then((data) => {
+      tarjetasProds = data;
+      tarjetasProds.forEach((contenido) => {
+        contenidoHTML += crearCards(contenido);
+      });
+      seccion.innerHTML = contenidoHTML;
+    })
+    .catch((error) => {
+      seccion.innerHTML = retornoCardError();
+    });
+};
+
+cargarContenido();
 
 // ! Funciones para aumentar o disminuir la cantidad de items en cada producto.
 let aumentar = (id) => {

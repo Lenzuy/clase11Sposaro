@@ -25,3 +25,14 @@ function filtrarProductos() {
 
 let buscarProd = document.getElementById("buscarProductos");
 buscarProd.addEventListener("click", filtrarProductos);
+
+// ! Cambiar image
+
+/* let imgYerbaSinPalos = document.getElementById("product-id-yerbaId1");
+let imgYerbaConPalos = document.getElementById("img-yerbaId2");
+let imgMate = document.getElementById("img-mateId");
+let imgBombilla = document.getElementById("img-bombillaId");
+let imgCuchillo = document.getElementById("img-cuchilloId");
+let imgTermo = document.getElementById("img-termoId");
+let imgYerbera = document.getElementById("img-yerberaId");
+let imgMatera = document.getElementById("img-materaId"); */

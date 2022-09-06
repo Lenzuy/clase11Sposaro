@@ -1,0 +1,74 @@
+[
+    {
+       "id": "yerbaId1",
+       "producto": "yerba",
+       "nombre": "Yerba",
+       "precio": 150,
+       "stock": 50,
+       "descripcion": "yerba con palos",
+       "imagen": "/images/yerbaConPalos.jpeg"
+    },
+    {
+        "id": "yerbaId2",
+        "producto": "yerba",
+        "nombre": "Yerba",
+        "precio": 180,
+        "stock": 50,
+        "descripcion": "yerba sin palos",
+        "imagen": "/images/yerbaSinPalos.jpg"
+     },
+     {
+        "id": "mateId",
+        "producto": "mate",
+        "nombre": "Mate",
+        "precio": 240,
+        "stock": 100,
+        "descripcion": "mate calabaza",
+        "imagen": "/images/mate.jpg"
+     },
+     {
+        "id": "bombillaId",
+        "producto": "bombilla",
+        "nombre": "Bombilla",
+        "precio": 1560,
+        "stock": 25,
+        "descripcion": "bombilla de plata",
+        "imagen": "/images/bombilla-plata-y-oro-antigua.jpg"
+     },
+     {
+        "id": "cuchilloId",
+        "producto": "cuchillo",
+        "nombre": "Cuchillo",
+        "precio": 4560,
+        "stock": 15,
+        "descripcion": "cuchillo acero damasco",
+        "imagen": "/images/R0501138-5_M.jpg"
+     },
+     {
+        "id": "termoId",
+        "producto": "termo",
+        "nombre": "Termo",
+        "precio": 3000,
+        "stock": 30,
+        "descripcion": "termo stanley verde",
+        "imagen": "/images/termoStanley.jpg"
+     },
+     {
+        "id": "yerberaId",
+        "producto": "yerbera",
+        "nombre": "Yerbera",
+        "precio": 250,
+        "stock": 150,
+        "descripcion": "yerbera",
+        "imagen": "/images/Yerbera-2.png"
+     },
+     {
+        "id": "materaId",
+        "producto": "matera",
+        "nombre": "Matera",
+        "precio": 1750,
+        "stock": 10,
+        "descripcion": "matera de cuero",
+        "imagen": "/images/matera3.jpg"
+     }
+]

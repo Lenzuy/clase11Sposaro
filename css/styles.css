@@ -10,9 +10,11 @@
   margin-bottom: 30px;
 }
 
-/**
-* ! Estilos del Footer
-**/
+.social-networks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
 
 /**
 * ! Estilos del contenedor de Productos
@@ -106,6 +108,10 @@
 #tituloCarrito {
   text-align: center;
 }
+
+/**
+* ! Estilos del mensaje de error de obtención de datos desde JSON
+**/
 
 /**
 * ! Mostrar u ocultar las Cards de Productos según filtro del Usuario.
