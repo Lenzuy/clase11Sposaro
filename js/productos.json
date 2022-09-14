@@ -6,7 +6,8 @@
        "precio": 150,
        "stock": 50,
        "descripcion": "yerba con palos",
-       "imagen": "/images/yerbaConPalos.jpeg"
+       "imagen": "/images/yerbaConPalos.jpeg",
+       "imagenOver": "/images/yerbaConPalosOVER.webp"
     },
     {
         "id": "yerbaId2",
@@ -15,7 +16,8 @@
         "precio": 180,
         "stock": 50,
         "descripcion": "yerba sin palos",
-        "imagen": "/images/yerbaSinPalos.jpg"
+        "imagen": "/images/yerbaSinPalos.jpg",
+        "imagenOver": "/images/yerbaSinPalosOVER.jpg"
      },
      {
         "id": "mateId",
@@ -24,7 +26,8 @@
         "precio": 240,
         "stock": 100,
         "descripcion": "mate calabaza",
-        "imagen": "/images/mate.jpg"
+        "imagen": "/images/mate.jpg",
+        "imagenOver": "/images/mateCalabazaOVER.jpg"
      },
      {
         "id": "bombillaId",
@@ -33,7 +36,8 @@
         "precio": 1560,
         "stock": 25,
         "descripcion": "bombilla de plata",
-        "imagen": "/images/bombilla-plata-y-oro-antigua.jpg"
+        "imagen": "/images/bombilla-plata-y-oro-antigua.jpg",
+        "imagenOver": "/images/BombillaPlatayoroOVER.jpg"
      },
      {
         "id": "cuchilloId",
@@ -42,7 +46,8 @@
         "precio": 4560,
         "stock": 15,
         "descripcion": "cuchillo acero damasco",
-        "imagen": "/images/R0501138-5_M.jpg"
+        "imagen": "/images/R0501138-5_M.jpg",
+        "imagenOver": "/images/cuchilloDamascoOVER.jpg"
      },
      {
         "id": "termoId",
@@ -51,7 +56,8 @@
         "precio": 3000,
         "stock": 30,
         "descripcion": "termo stanley verde",
-        "imagen": "/images/termoStanley.jpg"
+        "imagen": "/images/termoStanley.jpg",
+        "imagenOver": "/images/termoStanleyOVER.jpg"
      },
      {
         "id": "yerberaId",
@@ -60,7 +66,8 @@
         "precio": 250,
         "stock": 150,
         "descripcion": "yerbera",
-        "imagen": "/images/Yerbera-2.png"
+        "imagen": "/images/Yerbera-2.png",
+        "imagenOver": "/images/yerberaOVER.webp"
      },
      {
         "id": "materaId",
@@ -69,6 +76,7 @@
         "precio": 1750,
         "stock": 10,
         "descripcion": "matera de cuero",
-        "imagen": "/images/matera3.jpg"
+        "imagen": "/images/matera3.jpg",
+        "imagenOver": "/images/materaOVER.webp"
      }
 ]

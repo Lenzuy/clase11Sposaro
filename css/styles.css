@@ -5,15 +5,47 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: #008000;
   padding: 25px 60px;
   margin-bottom: 30px;
 }
 
+i {
+  cursor: pointer;
+}
+
+/**
+* ! Estilos del Footer
+**/
+
 .social-networks {
   display: flex;
   justify-content: center;
   gap: 15px;
+}
+
+.page-container {
+  position: relative;
+  min-height: 88.3vh;
+}
+
+.content-wrap {
+  padding-bottom: 68px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 68px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
 }
 
 /**
@@ -83,6 +115,8 @@
 .carrito {
   position: relative;
   background-color: white;
+  align-items: center;
+  gap: 10px;
   color: #212529;
   font-size: 30px;
   padding: 5px;
@@ -101,22 +135,93 @@
 }
 
 /**
-* ! Estilos del indicador de
-* ! si el carrito está vacío o tiene items.
+* ! Estilos del indicador de si el carrito está vacío o tiene items.
 **/
 
 #tituloCarrito {
   text-align: center;
 }
 
+.text-center {
+  text-align: center;
+  /*   margin-bottom: 20px; */
+}
+
+.HomeBtn,
+.checkout,
+.removerTodo {
+  background-color: #008000;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.removerTodo {
+  background-color: red;
+}
+
+.btn-checkout {
+  padding-bottom: 15px;
+}
+
 /**
-* ! Estilos del mensaje de error de obtención de datos desde JSON
+* ! Estilos de la página del carrito
 **/
+
+.bi-x-lg {
+  color: red;
+  font-weight: bold;
+}
 
 /**
 * ! Mostrar u ocultar las Cards de Productos según filtro del Usuario.
 * ? Esta funcionalidad aún no está disponible, sino que quedará para la parte final del Proyecto
 **/
+
+/**
+* ! Estilos para la página del carrito de compras
+**/
+
+.shopping-cart {
+  display: grid !important;
+  grid-template-columns: repeat(1, 320px) !important;
+  justify-content: center !important;
+  gap: 15px !important;
+}
+
+.titulo-precio {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center !important;
+  justify-content: space-around !important;
+}
+
+.detalles {
+  padding-top: 10px;
+}
+
+.imagen-carrito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tarjeta-carrito {
+  padding: 0 !important;
+}
+
+.precio-x {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-subtotal {
+  display: flex;
+  justify-content: space-around;
+}
 
 /* #product-id-yerbaId1 {
   display: block;
@@ -141,5 +246,4 @@
 }
 #product-id-materaId {
   display: none;
-}
- */
+} */

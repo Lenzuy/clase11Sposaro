@@ -1,110 +1,6 @@
-// ! Class contructor de los productos.
-class Producto {
-  constructor(id, producto, nombre, precio, stock, descripcion, imagen) {
-    this.id = id;
-    this.producto = producto;
-    this.nombre = nombre;
-    this.precio = precio;
-    this.stock = stock;
-    this.descripcion = descripcion;
-    this.imagen = imagen;
-  }
-}
-
 // ! El carrito mostrado en la navbar; obtiene la información almacenada en el localStorage.
 // ! Utilizo un Operador OR para que me muestre O lo que hay en el localStorage o sino un array vacío.
 let basket = JSON.parse(localStorage.getItem("data")) || [];
-
-// !Se crea el Objeto con todos los productos.
-const productos = [];
-productos.push(
-  new Producto(
-    "yerbaId1",
-    "yerba",
-    "Yerba",
-    150,
-    50,
-    "yerba con palos",
-    "/images/yerbaConPalos.jpeg"
-  )
-);
-productos.push(
-  new Producto(
-    "yerbaId2",
-    "yerba",
-    "Yerba",
-    180,
-    50,
-    "yerba sin palos",
-    "/images/yerbaSinPalos.jpg"
-  )
-);
-productos.push(
-  new Producto(
-    "mateId",
-    "mate",
-    "Mate",
-    240,
-    100,
-    "mate calabaza",
-    "/images/mate.jpg"
-  )
-);
-productos.push(
-  new Producto(
-    "bombillaId",
-    "bombilla",
-    "Bombilla",
-    1560,
-    25,
-    "bombilla de plata",
-    "/images/bombilla-plata-y-oro-antigua.jpg"
-  )
-);
-productos.push(
-  new Producto(
-    "cuchilloId",
-    "cuchillo",
-    "Cuchillo",
-    4560,
-    15,
-    "cuchillo acero damasco",
-    "/images/R0501138-5_M.jpg"
-  )
-);
-productos.push(
-  new Producto(
-    "termoId",
-    "termo",
-    "Termo",
-    3000,
-    30,
-    "termo stanley verde",
-    "/images/termoStanley.jpg"
-  )
-);
-productos.push(
-  new Producto(
-    "yerberaId",
-    "yerbera",
-    "Yerbera",
-    250,
-    150,
-    "yerbera",
-    "/images/Yerbera-2.png"
-  )
-);
-productos.push(
-  new Producto(
-    "materaId",
-    "matera",
-    "Matera",
-    1750,
-    10,
-    "matera de cuero",
-    "/images/matera3.jpg"
-  )
-);
 
 // let containerProd = document.getElementById("contenedorProductos");
 const containerCarrito = document.querySelector("#carrito");
@@ -183,21 +79,25 @@ let aumentar = (id) => {
   } else {
     buscar.item += 1;
   }
-  localStorage.setItem("data", JSON.stringify(basket));
+
   //console.log(basket);
   actualizar(itemSeleccionado.id);
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 let disminuir = (id) => {
   let itemSeleccionado = id;
   let buscar = basket.find((x) => x.id === itemSeleccionado.id);
 
-  if (buscar.item === 0) return;
+  if (buscar === undefined) return;
+  else if (buscar.item === 0) return;
   else {
     buscar.item -= 1;
   }
-  localStorage.setItem("data", JSON.stringify(basket));
   actualizar(itemSeleccionado.id);
+  basket = basket.filter((x) => x.item !== 0);
+
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 // !Esta función actualiza en momento real la cantidad de items que aparece en cada tarjeta de producto.
