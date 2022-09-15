@@ -223,27 +223,27 @@ i {
   justify-content: space-around;
 }
 
-/* #product-id-yerbaId1 {
-  display: block;
-}
-#product-id-yerbaId2 {
+.yerbaId1 {
   display: none;
 }
-#product-id-mateId {
+.yerbaId2 {
   display: none;
 }
-#product-id-bombillaId {
+.mateId {
   display: none;
 }
-#product-id-yerberaId {
-  display: block;
-}
-#product-id-cuchilloId {
+.bombillaId {
   display: none;
 }
-#product-id-termoId {
+.yerberaId {
   display: none;
 }
-#product-id-materaId {
+.cuchilloId {
   display: none;
-} */
+}
+.termoId {
+  display: none;
+}
+.materaId {
+  display: none;
+}

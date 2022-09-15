@@ -21,9 +21,27 @@ function filtrarProductos() {
       icon: "success",
       confirmButtonText: "OK",
     });
-    console.table(resultado);
+    removerProductos();
   }
 }
+
+// ! Con esta función se muestra únicamente el producto que coincida con lo buscado por el usuario.
+const removerProductos = () => {
+  let filtro = document.getElementById("inputBuscador").value.toLowerCase();
+  const idResultado = productos.filter((productos) =>
+    productos.id.includes(filtro)
+  );
+  //debugger;
+  productos.forEach((element) => {
+    if (element.id !== idResultado[0].id && element.id !== idResultado[1].id) {
+      const prodSelecc = document.getElementById("product-id-" + element.id);
+      prodSelecc.style.display = "none";
+    } else {
+      prodExito = document.getElementById("product-id-" + element.id);
+      prodExito.style.display = "block";
+    }
+  });
+};
 
 let buscarProd = document.getElementById("buscarProductos");
 buscarProd.addEventListener("click", filtrarProductos);

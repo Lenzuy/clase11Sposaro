@@ -95,6 +95,7 @@ let disminuir = (id) => {
   actualizar(itemSeleccionado.id);
   basket = basket.filter((x) => x.item !== 0);
   generateCartItems(); // ! si algún item llega a 0, se remueve de la lista de cartas del carrito y se regeneran las que si tienen items.
+  location.reload(); // Se recarga la página para dar funcionamiento al botón "checkout"
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -112,6 +113,7 @@ let removeItem = (id) => {
   generateCartItems();
   totalAmount();
   calculation();
+  location.reload(); // Se recarga la página para dar funcionamiento al botón "checkout"
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -166,7 +168,7 @@ async function checkout() {
     inputOptions: inputOptions,
     inputValidator: (value) => {
       if (!value) {
-        return "Debes elegir una opción!";
+        return "¡Debes elegir una opción!";
       }
     },
   });
@@ -174,7 +176,7 @@ async function checkout() {
   if (color) {
     Swal.fire(
       "¡Gracias por elegirnos!",
-      "Recibirá un e-mail de confirmación de compra",
+      "Recibirá un e-mail de confirmación de compra e información de pago.",
       "success"
     );
   }
