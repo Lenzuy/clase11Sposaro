@@ -24,7 +24,7 @@ const crearCards = (content) => {
     <img src="${imagen}" class="card-img-top" id=img-${id} alt="${descripcion}">
     <div class="card-body">
       <h5 class="card-title">${nombre}</h5>
-      <p class="card-text">${descripcion}</p>
+      <p class="card-text">${descripcion.toUpperCase()}</p>
       <div class="precio-cantidad">
         <span class="card-price">$${precio}</span>
         <div class="buttons">
