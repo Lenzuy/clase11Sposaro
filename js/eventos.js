@@ -21,24 +21,44 @@ function filtrarProductos() {
       icon: "success",
       confirmButtonText: "OK",
     });
-    removerProductos();
+
+    mostrarProductos();
   }
 }
 
 // ! Con esta función se muestra únicamente el producto que coincida con lo buscado por el usuario.
-const removerProductos = () => {
+const mostrarProductos = () => {
   let filtro = document.getElementById("inputBuscador").value.toLowerCase();
   const idResultado = productos.filter((productos) =>
     productos.id.includes(filtro)
   );
-  //debugger;
   productos.forEach((element) => {
-    if (element.id !== idResultado[0].id && element.id !== idResultado[1].id) {
-      const prodSelecc = document.getElementById("product-id-" + element.id);
-      prodSelecc.style.display = "none";
-    } else {
-      prodExito = document.getElementById("product-id-" + element.id);
-      prodExito.style.display = "block";
+    switch (idResultado.length) {
+      case 1:
+        if (element.id !== idResultado[0].id) {
+          const prodSelecc = document.getElementById(
+            "product-id-" + element.id
+          );
+          prodSelecc.style.display = "none";
+        } else {
+          prodExito = document.getElementById("product-id-" + element.id);
+          prodExito.style.display = "block";
+        }
+        break;
+      case 2:
+        if (
+          element.id !== idResultado[0].id &&
+          element.id !== idResultado[1].id
+        ) {
+          const prodSelecc = document.getElementById(
+            "product-id-" + element.id
+          );
+          prodSelecc.style.display = "none";
+        } else {
+          prodExito = document.getElementById("product-id-" + element.id);
+          prodExito.style.display = "block";
+        }
+        break;
     }
   });
 };
